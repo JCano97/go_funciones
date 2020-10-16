@@ -13,7 +13,18 @@ func sum(args ...int) int {
 }
 
 func main() {
-	a := []int{1, 4, 2, -1}
-	fmt.Println(sum(4, 5, 2, 0, 8, 3, 7, 6))
-	fmt.Println(sum(a...))
+	var n int
+	var entrada int
+
+	fmt.Print("Ingrese la cantidad de enteros a capturar: ")
+	fmt.Scan(&n)
+	//define tamaño del slice
+	a := make([]int, 0, n)
+	//recibe los enteros
+	for i := 0; i < n; i++ {
+		fmt.Print("Ingrese entero: ")
+		fmt.Scan(&entrada)
+		a = append(a, entrada)
+	}
+	fmt.Println("Numero mas grande: ", sum(a...))
 }
