@@ -12,10 +12,12 @@ func generadorImpares() func() uint {
 }
 
 func main() {
+	var rango int
+	print("Ingrese el numero de impares a generar: ")
+	fmt.Scan(&rango)
+
 	siguienteImpar := generadorImpares()
-	fmt.Println(siguienteImpar())
-	fmt.Println(siguienteImpar())
-	fmt.Println(siguienteImpar())
-	fmt.Println(siguienteImpar())
-	fmt.Println(siguienteImpar())
+	for i := 0; i < rango; i++ {
+		fmt.Print(siguienteImpar(), ",")
+	}
 }
